@@ -1,11 +1,7 @@
 import json
 import os
-import sys
 import logging
-
-sys.path.insert(0, F"{os.environ['LAMBDA_TASK_ROOT']}/{os.environ['DIR_NAME']}")
 import boto3
-import botocore
 
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
@@ -17,6 +13,10 @@ def lambda_handler(event, context):
     logger.debug("sendmessage: %s" % event)
 
     post_data = json.loads(event.get('body', '{}')).get('data')
+    if post_data is None:
+        post_data = str(json.loads(event.get('body', '{}')).get('value'))
+    if post_data is not None:
+        post_data = '{"type": "message", "data": "' + post_data + '"}'
     domain_name = event.get('requestContext',{}).get('domainName')
     stage       = event.get('requestContext',{}).get('stage')
     if (post_data and domain_name and stage) is None:
