@@ -15,10 +15,12 @@
 #### 実行結果
 		wscat -c wss://**********.execute-api.us-west-2.amazonaws.com/prod	
 		connected (press CTRL+C to quit)	
+		
 		> {"action":"sendmessage", "data":"hello world!"}	
 		< {"type": "message", "data": "hello world!"}	
+		
 		> {"action":"sendmessage", "value":36.5}	
-		< {"type": "message", "data": "36.5"}	
+		< {"type": "message", "value": 36.5}	
 
 ### 使用方法などの詳細は原作者（kumapo様）が公開している下記の情報を参照ください
 
