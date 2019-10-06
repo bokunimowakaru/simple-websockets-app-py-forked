@@ -1,18 +1,18 @@
 # forked "simple-websockets-app-py"
 
-## –{ƒvƒƒOƒ‰ƒ€‚É‚Â‚¢‚Ä
+## æœ¬ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã«ã¤ã„ã¦
 
-### ‰º‹L‚©‚çƒRƒs[‚µ‚½‚à‚Ì‚ğŠî‚É‹@”\’Ç‰Á‚µ‚Ü‚µ‚½i2019/10/06j
+### ä¸‹è¨˜ã‹ã‚‰ã‚³ãƒ”ãƒ¼ã—ãŸã‚‚ã®ã‚’åŸºã«æ©Ÿèƒ½è¿½åŠ ã—ã¾ã—ãŸï¼ˆ2019/10/06ï¼‰
 
 <https://github.com/kumapo/simple-websockets-app-py>	
 
-#### ’Ç‰Á‹@”\
-- ƒCƒ“ƒXƒg[ƒ‹‚Ìƒ‹[ƒg©“®İ’è‚ÆŠÖ˜A•t‚¯
-- ƒgƒŠƒK—pƒf[ƒ^ióMj‚Évalue‚ğ’Ç‰Á	
-	“ü—Í `{"action":"sendmessage", "value":36.5}`
-- ƒvƒbƒVƒ…’Ê’mƒf[ƒ^i‘—Mj‚ÌJSON‰»
+#### è¿½åŠ æ©Ÿèƒ½
+- ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ™‚ã®ãƒ«ãƒ¼ãƒˆè‡ªå‹•è¨­å®šã¨é–¢é€£ä»˜ã‘
+- ãƒˆãƒªã‚¬ç”¨ãƒ‡ãƒ¼ã‚¿ï¼ˆå—ä¿¡ï¼‰ã«valueã‚’è¿½åŠ 	
+	å…¥åŠ› `{"action":"sendmessage", "value":36.5}`
+- ãƒ—ãƒƒã‚·ãƒ¥é€šçŸ¥ãƒ‡ãƒ¼ã‚¿ï¼ˆé€ä¿¡ï¼‰ã®JSONåŒ–
 
-#### ÀsŒ‹‰Ê
+#### å®Ÿè¡Œçµæœ
 		wscat -c wss://**********.execute-api.us-west-2.amazonaws.com/prod	
 		connected (press CTRL+C to quit)	
 		
@@ -22,22 +22,22 @@
 		> {"action":"sendmessage", "value":36.5}	
 		< {"type": "message", "value": 36.5}	
 
-### g—p•û–@‚È‚Ç‚ÌÚ×‚ÍŒ´ìÒikumapo—lj‚ªŒöŠJ‚µ‚Ä‚¢‚é‰º‹L‚Ìî•ñ‚ğQÆ‚­‚¾‚³‚¢
+### ä½¿ç”¨æ–¹æ³•ãªã©ã®è©³ç´°ã¯åŸä½œè€…ï¼ˆkumapoæ§˜ï¼‰ãŒå…¬é–‹ã—ã¦ã„ã‚‹ä¸‹è¨˜ã®æƒ…å ±ã‚’å‚ç…§ãã ã•ã„
 
 websocket APIs with API Gateway and Lambda running on Python3	
 <https://qiita.com/kumapo/items/6b65b468b9d3d6884cbb>	
 	
-## ƒ‰ƒCƒZƒ“ƒX
+## ãƒ©ã‚¤ã‚»ãƒ³ã‚¹
 
-Œ´‘¥‚Æ‚µ‚Ä MITƒ‰ƒCƒZƒ“ƒX‚Æ‚µ‚Ü‚·‚ªAƒ‰ƒCƒZƒ“ƒXŒ`‘Ô‚ğŠÜ‚ßA•â‚Í‚ ‚è‚Ü‚¹‚ñB	
+åŸå‰‡ã¨ã—ã¦ MITãƒ©ã‚¤ã‚»ãƒ³ã‚¹ã¨ã—ã¾ã™ãŒã€ãƒ©ã‚¤ã‚»ãƒ³ã‚¹å½¢æ…‹ã‚’å«ã‚ã€è£œå„Ÿã¯ã‚ã‚Šã¾ã›ã‚“ã€‚	
 
-		JavaScript”ÅF	
+		JavaScriptç‰ˆï¼š	
 		modified MIT License	
 		Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.	
 		https://github.com/aws-samples/simple-websockets-chat-app
 		
-		Python”Å(forkŒ³)F	
-		ƒ‰ƒCƒZƒ“ƒX•\¦‚È‚µ	
+		Pythonç‰ˆ(forkå…ƒ)ï¼š	
+		ãƒ©ã‚¤ã‚»ãƒ³ã‚¹è¡¨ç¤ºãªã—	
 		https://github.com/kumapo/simple-websockets-app-py
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -53,7 +53,7 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-ˆÈã forked by Wataru KUNINO	
+ä»¥ä¸Š forked by Wataru KUNINO	
 	
 --------------------------------------------------------------------------------
 ## Deployment
