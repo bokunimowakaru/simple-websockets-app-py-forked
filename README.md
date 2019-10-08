@@ -8,8 +8,9 @@
 
 #### 追加機能
 - インストール時のルート自動設定と関連付け
-- トリガ用データ（受信）にvalueを追加	
-	入力 `{"action":"sendmessage", "value":36.5}`
+- トリガ用データ（受信）にvalue、deviceを追加	
+	入力 `{"action":"sendmessage", "value":3.14}`	
+	入力 `{"action":"sendmessage", "value":-273.15, "device":"sensr_0"}`	
 - プッシュ通知データ（送信）のJSON化
 
 #### 実行結果
@@ -19,8 +20,17 @@
 		> {"action":"sendmessage", "data":"hello world!"}	
 		< {"type": "message", "data": "hello world!"}	
 		
-		> {"action":"sendmessage", "value":36.5}	
-		< {"type": "message", "value": 36.5}	
+		> {"action":"sendmessage", "value":3.14}	
+		< {"type": "message", "value": 3.14}	
+
+		> {"action":"sendmessage", "value":365}	
+		< {"type": "message", "value": 365}	
+
+		> {"action":"sendmessage", "device":"sensr_0"}	
+		< {"type": "message", "device": "sensr_0"}	
+
+		> {"action":"sendmessage", "data":"mixed", "value":-273.15, "device":"sensr_0"}
+		< {"type": "message", "data": "mixed", "value": -273.15, "device": "sensr_0"}
 
 ### 使用方法などの詳細は原作者（kumapo様）が公開している下記の情報を参照ください
 
@@ -73,4 +83,4 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - Type `{"action":"sendmessage", "data":"hello world!"}`
 
 added by Wataru
-- Type `{"action":"sendmessage", "value":36.5}`
+- Type `{"action":"sendmessage", "value":365}`

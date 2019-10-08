@@ -4,22 +4,26 @@ import logging
 import boto3
 
 logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 
 dynamodb = boto3.resource('dynamodb')
-connections = dynamodb.Table(os.environ['TABLE_NAME'])
+dbTable = dynamodb.Table(os.environ['TABLE_NAME'])
+
+error_forbidden = { 'statusCode': '403', 'body': 'Forbidden' }
+error_internal  = { 'statusCode': '500', 'body': 'Internal server error' }
 
 def lambda_handler(event, context):
-    logger.debug("onconnect: %s" % event)
+    logger.info("onconnect: %s" % event)
 
-    connection_id = event.get('requestContext',{}).get('connectionId')
-    if connection_id is None:
-        return { 'statusCode': 400, 
-                 'body': 'bad request' }
+    requestContext = event.get('requestContext',{})
+    connection_id = requestContext.get('connectionId')
+    request_id     = requestContext.get('requestId')
+    if (connection_id is None) or (request_id is None):
+        logger.error('connection id is None')
+        return error_forbidden
 
-    result = connections.put_item(Item={ 'id': connection_id })
+    result = dbTable.put_item(Item={ 'id': connection_id })
     if result.get('ResponseMetadata',{}).get('HTTPStatusCode') != 200:
-        return { 'statusCode': 500,
-                 'body': 'something went wrong' }
-    return { 'statusCode': 200,
-             'body': 'ok' }
+        logger.error("db, put_item failed: %s" % result)
+        return error_internal
+    return { 'statusCode': 200, 'body': 'OK' }
