@@ -7,11 +7,11 @@
 <https://github.com/kumapo/simple-websockets-app-py>	
 
 #### 追加機能
-- インストール時のルート自動設定と関連付け
+- インストール時のルート自動設定と関連付け	
 - トリガ用データ（受信）にvalue、deviceを追加	
 		入力 `{"action":"sendmessage", "value":3.14}`	
 		入力 `{"action":"sendmessage", "value":-273.15, "device":"sensr_0"}`	
-- プッシュ通知データ（送信）のJSON化
+- プッシュ通知データ（送信）のJSON化	
 
 #### 実行結果
 		wscat -c wss://**********.execute-api.us-west-2.amazonaws.com/prod	
