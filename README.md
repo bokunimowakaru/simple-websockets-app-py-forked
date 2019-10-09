@@ -2,6 +2,9 @@
 
 ## 本プログラムについて
 
+AWS上で動作するWebSocketサーバのサンプル・プログラムです。		
+遠隔地のIoTセンサが送信したセンサ値を、別宅でリアルタイムに受信するときなどに使用することが出来ます。		
+
 ### 下記からコピーしたものを基に機能追加しました（2019/10/06）
 
 <https://github.com/kumapo/simple-websockets-app-py>	
@@ -46,7 +49,7 @@ AWS Documentationの中には、最新（2019/07/29版）のサンプル・コ�
 ただ、あまりにもコード量が多いので、実験や試用の段階では、本ブランチ等のサンプルの方が手軽です。
 
 --------------------------------------------------------------------------------
-## Deployment
+## デプロイ方法 Deployment
 
 - Install python packages
 - `aws s3 mb s3://simple-websockets-app-py`
@@ -56,14 +59,12 @@ AWS Documentationの中には、最新（2019/07/29版）のサンプル・コ�
 - Deploy the APIs for `prod`
 - Press 'Save Changes' on the stage prod page
 
-## Connecting via websocket
+## WebSocket接続方法 Connecting via websocket
 
 - Install node modules
 - `wscat -c wss://{API-ID}.execute-api.{REGION}.amazonaws.com/prod`
 - Type `{"action":"sendmessage", "data":"hello world!"}`
-
-added by Wataru
-- Type `{"action":"sendmessage", "value":365}`
+- Type `{"action":"sendmessage", "value":365}` (追加機能)
 
 --------------------------------------------------------------------------------
 ## ライセンス
