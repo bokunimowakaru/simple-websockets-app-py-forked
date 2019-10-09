@@ -37,6 +37,35 @@
 websocket APIs with API Gateway and Lambda running on Python3	
 <https://qiita.com/kumapo/items/6b65b468b9d3d6884cbb>	
 	
+## その他の参考情報
+
+AWS Documentationの中には、最新（2019/07/29版）のサンプル・コードがあります。ApiGatewayV2と呼ばれるWebSocketを前提にした最新のライブラリを使用しているようなので、本格的に始めたい場合は参考になると思います。
+
+<https://docs.aws.amazon.com/ja_jp/code-samples/latest/catalog/code-catalog-python-example_code-apigateway-websocket.html>
+
+ただ、あまりにもコード量が多いので、実験や試用の段階では、本ブランチ等のサンプルの方が手軽です。
+
+--------------------------------------------------------------------------------
+## Deployment
+
+- Install python packages
+- `aws s3 mb s3://simple-websockets-app-py`
+- `sam package --template-file template.yaml --output-template-file packaged.yaml --s3-bucket s3://simple-websockets-app-py`
+- `aws cloudformation deploy --template-file packaged.yaml --stack-name simple-websockets-app-py --capabilities CAPABILITY_IAM`
+- ~~Ensure that each lambda is tied to the corresponding route for API Gateway~~
+- Deploy the APIs for `prod`
+- Press 'Save Changes' on the stage prod page
+
+## Connecting via websocket
+
+- Install node modules
+- `wscat -c wss://{API-ID}.execute-api.{REGION}.amazonaws.com/prod`
+- Type `{"action":"sendmessage", "data":"hello world!"}`
+
+added by Wataru
+- Type `{"action":"sendmessage", "value":365}`
+
+--------------------------------------------------------------------------------
 ## ライセンス
 
 原則として MITライセンスとしますが、ライセンス形態を含め、補償はありません。	
@@ -63,32 +92,3 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## その他の参考情報
-
-AWS Documentationの中には、最新（2019/07/29版）のサンプル・コードがあります。ApiGatewayV2と呼ばれるWebSocketを前提にした最新のライブラリを使用しているようなので、本格的に始めたい場合は参考になると思います。
-
-<https://docs.aws.amazon.com/ja_jp/code-samples/latest/catalog/code-catalog-python-example_code-apigateway-websocket.html>
-
-ただ、あまりにもコード量が多いので、実験や試用の段階では、本ブランチ等のサンプルの方が手軽です。
-
-以上 forked by Wataru KUNINO	
-	
---------------------------------------------------------------------------------
-## Deployment
-
-- Install python packages
-- `aws s3 mb s3://simple-websockets-app-py`
-- `sam package --template-file template.yaml --output-template-file packaged.yaml --s3-bucket s3://simple-websockets-app-py`
-- `aws cloudformation deploy --template-file packaged.yaml --stack-name simple-websockets-app-py --capabilities CAPABILITY_IAM`
-- ~~Ensure that each lambda is tied to the corresponding route for API Gateway~~
-- Deploy the APIs for `prod`
-- Press 'Save Changes' on the stage prod page
-
-## Connecting via websocket
-
-- Install node modules
-- `wscat -c wss://{API-ID}.execute-api.{REGION}.amazonaws.com/prod`
-- Type `{"action":"sendmessage", "data":"hello world!"}`
-
-added by Wataru
-- Type `{"action":"sendmessage", "value":365}`
