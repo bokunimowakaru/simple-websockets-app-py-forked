@@ -69,17 +69,18 @@ AWS Documentationの中には、最新（2019/07/29版）のサンプル・コ�
 --------------------------------------------------------------------------------
 ## ライセンス
 
-原則として MITライセンスとしますが、ライセンス形態を含め、補償はありません。	
+原則として MITライセンスとしますが、fork元のライセンスが明記されていません。JavaScript版がMITライセンスを基にしているので、同ライセンスを引き継いでいるものと考えられます。		
+※ライセンス形態を含め、一切の補償をいたしません。	
+
+		Python版(fork元)：	
+		ライセンス表示なし	
+		https://github.com/kumapo/simple-websockets-app-py
 
 		JavaScript版：	
 		modified MIT License	
 		Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.	
 		https://github.com/aws-samples/simple-websockets-chat-app
 		
-		Python版(fork元)：	
-		ライセンス表示なし	
-		https://github.com/kumapo/simple-websockets-app-py
-
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
 the Software without restriction, including without limitation the rights to
