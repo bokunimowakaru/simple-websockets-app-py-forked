@@ -63,6 +63,14 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+## その他の参考情報
+
+AWS Documentationの中には、最新（2019/07/29版）のサンプル・コードがあります。ApiGatewayV2と呼ばれるWebSocketを前提にした最新のライブラリを使用しているようなので、本格的に始めたい場合は参考になると思います。
+
+<https://docs.aws.amazon.com/ja_jp/code-samples/latest/catalog/code-catalog-python-example_code-apigateway-websocket.html>
+
+ただ、あまりにもコード量が多いので、実験や試用の段階では、本ブランチ等のサンプルの方が手軽です。
+
 以上 forked by Wataru KUNINO	
 	
 --------------------------------------------------------------------------------
