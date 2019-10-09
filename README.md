@@ -42,11 +42,9 @@ websocket APIs with API Gateway and Lambda running on Python3
 	
 ## その他の参考情報
 
-AWS Documentationの中には、最新（2019/07/29版）のサンプル・コードがあります。ApiGatewayV2と呼ばれるWebSocketを前提にした最新のライブラリを使用しているようなので、本格的に始めたい場合は参考になると思います。
+AWS Documentationの中には、最新（2019/07/29版）のサンプル・コードがあり、本格的に始めたい場合に参考になると思います。ただし、コード量が多いので、実験や試用の段階では、本ブランチ等のサンプルの方が手軽です。
 
 <https://docs.aws.amazon.com/ja_jp/code-samples/latest/catalog/code-catalog-python-example_code-apigateway-websocket.html>
-
-ただ、あまりにもコード量が多いので、実験や試用の段階では、本ブランチ等のサンプルの方が手軽です。
 
 --------------------------------------------------------------------------------
 ## デプロイ方法 Deployment
