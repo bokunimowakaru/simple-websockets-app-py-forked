@@ -40,15 +40,15 @@ AWS上で動作するWebSocketサーバのサンプル・プログラムです�
 本README内の「デプロイ方法 Deployment」および、「WebSocket接続方法 Connecting via websocket」に概要を説明しています。  
 下記のサイトも参照の上、ご利用ください。
 
-- Raspberry PiへAWS SAM CLIをインストールする方法：	
-<https://bokunimo.net/blog/raspberry-pi/596/>
+- Raspberry PiへAWS SAM CLIをインストールする方法：		
+<https://bokunimo.net/blog/raspberry-pi/596/>		
 
-- WebSocket Chat (JavaScript版)をインストールする方法：	
-<https://bokunimo.net/blog/raspberry-pi/605/>
+- WebSocket Chat (JavaScript版)をインストールする方法：		
+<https://bokunimo.net/blog/raspberry-pi/605/>		
 
-- 原作者（kumapo様）が公開している情報：  
-websocket APIs with API Gateway and Lambda running on Python3	
-<https://qiita.com/kumapo/items/6b65b468b9d3d6884cbb>	
+- 原作者（kumapo様）が公開している情報：  	
+websocket APIs with API Gateway and Lambda running on Python3		
+<https://qiita.com/kumapo/items/6b65b468b9d3d6884cbb>		
 	
 ## その他の参考情報
 
@@ -81,8 +81,8 @@ AWS Documentationの中には、最新（2019/07/29版）のサンプル・コ�
 		自動でWebSocket接続を繰り返したり、複数の接続を行うことを禁止します。  
 		目的をご理解の上、節度を持ってご利用ください。  
 
-- サンプル・ソフトウェア（クライアント側）	
-<https://github.com/bokunimowakaru/simple-websockets-app-py-forked/blob/master/ws_aws_example.py>
+- サンプル・ソフトウェア（クライアント側）		
+<https://github.com/bokunimowakaru/simple-websockets-app-py-forked/blob/master/ws_aws_example.py>		
 
 --------------------------------------------------------------------------------
 ## デプロイ方法 Deployment
@@ -108,10 +108,15 @@ AWS Documentationの中には、最新（2019/07/29版）のサンプル・コ�
 原則として MITライセンスとしますが、fork元のライセンスが明記されていません。JavaScript版がMITライセンスを基にしているので、同ライセンスを引き継いでいるものと考えられます。		
 ※ライセンス形態を含め、一切の補償をいたしません。	
 
+		本バージョン	
+		下記のライセンスからの変更点については国野亘が著作権を保有します	
+		ライセンス形態はMITライセンスを基本としますが、下記の作成物の	
+		権利については、それぞれのライセンスにしたがって下さい。	
+		
 		Python版(fork元)：	
 		ライセンス表示なし	
 		https://github.com/kumapo/simple-websockets-app-py
-
+		
 		JavaScript版：	
 		modified MIT License	
 		Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.	
