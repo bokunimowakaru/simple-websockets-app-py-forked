@@ -35,8 +35,18 @@ AWS上で動作するWebSocketサーバのサンプル・プログラムです�
 		> {"action":"sendmessage", "data":"mixed", "value":-273.15, "device":"sensr_0"}
 		< {"type": "message", "data": "mixed", "value": -273.15, "device": "sensr_0"}
 
-### 使用方法などの詳細は原作者（kumapo様）が公開している下記の情報を参照ください
+### 使用方法
 
+本README内の「デプロイ方法 Deployment」および、「WebSocket接続方法 Connecting via websocket」に概要を説明しています。  
+下記のサイトも参照の上、ご利用ください。
+
+- Raspberry PiへAWS SAM CLIをインストールする方法：	
+<https://bokunimo.net/blog/raspberry-pi/596/>
+
+- WebSocket Chat (JavaScript版)をインストールする方法：	
+<https://bokunimo.net/blog/raspberry-pi/605/>
+
+- 原作者（kumapo様）が公開している情報：  
 websocket APIs with API Gateway and Lambda running on Python3	
 <https://qiita.com/kumapo/items/6b65b468b9d3d6884cbb>	
 	
@@ -45,6 +55,34 @@ websocket APIs with API Gateway and Lambda running on Python3
 AWS Documentationの中には、最新（2019/07/29版）のサンプル・コードがあり、本格的に始めたい場合に参考になると思います。ただし、コード量が多いので、実験や試用の段階では、本ブランチ等のサンプルの方が手軽です。
 
 <https://docs.aws.amazon.com/ja_jp/code-samples/latest/catalog/code-catalog-python-example_code-apigateway-websocket.html>
+
+### システム応用例
+簡単な応用例として、IoT向け通知メッセージ受信の確認用サンプル ws_aws_example.py を作成しました。  
+本スクリプト実行すると、以下の処理を行います。  
+
+- サンプルのWebSocketサーバに接続情報を、筆者のウェブサイトからHTTP GETで取得します。
+- 受信したapi_id、region、stageを使ってWebSocket接続を行います。
+- WebSocketサーバから受信した以下のようなデータを表示します。
+	- 2分間隔で送られてくる、keepalive信号を表示します
+	- 20分間隔で送られてくる遠隔地の室温をデータ（value = xx.x）を表示します
+	- 同サーバに誰かが接続したときに現在のWebSocket接続数（sockets = x）を表示します
+
+- 2時間後に停止します。[Ctrl]＋[C]の操作で停止させることも出来ます
+
+		2019/10/06 08:32, type = keepalive, sockets = 1	
+		2019/10/06 08:34, type = keepalive, sockets = 1	
+		2019/10/06 08:36, type = keepalive, sockets = 1	
+		2019/10/06 08:37, type = notify, sockets = 2, total = 81	
+		2019/10/06 08:38, type = keepalive, sockets = 2	
+		2019/10/06 08:40, type = keepalive, sockets = 2	
+		2019/10/06 08:40, type = message, value = 29.5	
+
+- ご注意とお願い	
+		自動でWebSocket接続を繰り返したり、複数の接続を行うことを禁止します。  
+		目的をご理解の上、節度を持ってご利用ください。  
+
+- サンプル・ソフトウェア（クライアント側）	
+<https://github.com/bokunimowakaru/simple-websockets-app-py-forked/blob/master/ws_aws_example.py>
 
 --------------------------------------------------------------------------------
 ## デプロイ方法 Deployment
